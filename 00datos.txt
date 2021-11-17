@@ -1,0 +1,7 @@
+//Integrantes del equipo:
+Andrés Ripoll Cabrera
+Ramón Hernández García
+//Identificador del equipo:
+a013
+//Mejoras:
+Están implementadas todas las mejoras que se piden para esta práctica. En la mejora de la animación, la animación que se emplea es la de rotar la imagen. Además, hemos añadido iconos a la aplicación y un Screen Launcher con una foto del icono de la app y el background en morado.
