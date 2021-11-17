@@ -11,7 +11,6 @@ import Combine
 struct MainView: View {
     @EnvironmentObject var quizzesModel: QuizzesModel
     @State var showAlert = false
-    var subscriber: AnyCancellable?
 
     var body: some View {
         TabView {
