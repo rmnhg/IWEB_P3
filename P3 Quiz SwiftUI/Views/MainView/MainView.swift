@@ -24,13 +24,5 @@ struct MainView: View {
                 }
 
         }
-        .onReceive(quizzesModel.$errorAlert, perform: { error in
-            showAlert = error != nil
-        })
-        .alert(isPresented: $showAlert) {
-                   Alert(title: Text("Alerta"),
-                                 message: Text(quizzesModel.errorAlert!),
-                                 dismissButton: .default(Text("Ok")))
-        }
     }
 }

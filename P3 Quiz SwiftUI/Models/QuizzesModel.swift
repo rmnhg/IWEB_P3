@@ -79,7 +79,7 @@ class QuizzesModel: ObservableObject {
         print("URL: \(urlStr)")
         //Me fijo que en el urlStr no haya espacios ni nada raro, sino habría que procesar la string
         guard let url = URL(string: urlStr) else {
-            self.errorAlert(errorMsg: "Error: no se ha podido crear la URL de petición")
+            self.errorAlert(errorMsg: "Error: no se ha podido crear la URL de petición.\n Se cargará la lista por defecto del archivo JSON")
             load()
             return
         }
@@ -95,11 +95,11 @@ class QuizzesModel: ObservableObject {
                     }
                     
                 } catch {
-                    self.errorAlert(errorMsg: "Error: no se ha podido procesar el JSON de respuesta: \(error)")
+                    self.errorAlert(errorMsg: "Error: no se ha podido procesar el JSON de respuesta: \(error).\n Se cargará la lista por defecto del archivo JSON")
                     self.load()
                 }
             } else {
-                self.errorAlert(errorMsg: "Error: no se ha podido crear la petición HTTP")
+                self.errorAlert(errorMsg: "Error: no se ha podido crear la petición HTTP.\n Se cargará la lista por defecto del archivo JSON")
                 self.load()
             }
         }

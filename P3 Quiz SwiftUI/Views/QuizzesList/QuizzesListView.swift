@@ -29,13 +29,21 @@ struct QuizzesListView: View {
                 }
             }
             .navigationBarTitle(Text("Práctica 3: Quiz SwiftUI"))
-            .navigationBarItems(leading: Text("gggggggggg").font(.callout),
+            .navigationBarItems(leading: Text("").font(.callout),
                                 trailing: Button(action: {
                                     quizzesModel.download()
                                     scoreModel.limpiar()
                                 }) {
                                     Label("Reload", systemImage: "arrow.triangle.2.circlepath")
                                 })
+        }
+        .onReceive(quizzesModel.$errorAlert, perform: { error in
+            showAlert = error != nil
+        })
+        .alert(isPresented: $showAlert) {
+                   Alert(title: Text("Alerta"),
+                                 message: Text(quizzesModel.errorAlert!),
+                                 dismissButton: .default(Text("Ok")))
         }
         //Para adaptar la vista en el formato horizontal
         .phoneOnlyStackNavigationView()
