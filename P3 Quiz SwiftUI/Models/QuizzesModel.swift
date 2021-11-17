@@ -26,10 +26,6 @@ class QuizzesModel: ObservableObject {
 
     @Published var errorAlert: String?
     
-    var errorSubscriber: PassthroughSubject<String, Never>?
-    
-    var errorSubscription: AnyCancellable?
-    
     var subscribers: Set<AnyCancellable> = []
 
     init() {
@@ -145,9 +141,5 @@ class QuizzesModel: ObservableObject {
     func errorAlert(errorMsg: String) {
         print(errorMsg)
         errorAlert = errorMsg
-        if let sub = errorSubscriber {
-            sub.send(errorMsg)
-            sub.send(completion: .finished)
-        }
     }
 }
