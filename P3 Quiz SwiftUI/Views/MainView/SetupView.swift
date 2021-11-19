@@ -28,6 +28,9 @@ struct SetupView: View {
                     }
                 }
             }
+            .navigationBarTitle(Text("Práctica 3: Quiz SwiftUI"))
         }
+        //Para adaptar la vista en el formato horizontal
+        .phoneOnlyStackNavigationView()
     }
 }

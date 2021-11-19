@@ -3,4 +3,6 @@ Andrés Ripoll Cabrera
 Ramón Hernández García
 //Identificador del equipo:
 a013
-//Mejoras:Están implementadas todas funcionalidades que se piden para la práctica. Además, también incluimos la mejora de actualizar favoritos, que contiene una animación. Por otro lado, se ha incluido un menú de aplicación para acceder a la vista play o bien a los ajustes. 
+//Mejoras:
+* Están implementadas todas funcionalidades que se piden para la práctica. Además, también incluimos la mejora de actualizar favoritos, que contiene una animación. Por otro lado, se ha incluido un menú de aplicación para acceder a la vista play o bien a los ajustes. 
+* En la pantalla de ajustes hemos añadido en la barra superior el mismo título que en la pantalla de la lista de quizzes. Además, hemos añadido la misma propiedad que a la pantalla de la lista de quizzes para que al tener el iPhone en horizontal la vista se adapte igual que en vertical a la pantalla.

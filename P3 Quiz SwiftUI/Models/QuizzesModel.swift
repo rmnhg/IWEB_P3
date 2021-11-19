@@ -38,7 +38,7 @@ class QuizzesModel: ObservableObject {
             UserDefaults.standard.synchronize()
         }.store(in: &subscribers)
         
-        $url_base.sink { token in
+        $token.sink { token in
             UserDefaults.standard.set(token, forKey: "token")
             UserDefaults.standard.synchronize()
         }.store(in: &subscribers)
