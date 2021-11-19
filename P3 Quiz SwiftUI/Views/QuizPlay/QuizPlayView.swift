@@ -1,6 +1,6 @@
 //
 //  QuizPlayView.swift
-//  Practica2
+//  Practica3
 //
 //  Created by Ramón Hernández García and Andrés Ripoll Cabrera on 25/10/21.
 //
@@ -35,7 +35,7 @@ struct QuizPlayView: View {
         .navigationBarTitle("Play", displayMode: .inline)
         .padding()
     }
-
+    
     private var quizItem: QuizItem {
         quizzesModel.quizzes[quizItemIndex]
     }
@@ -82,8 +82,6 @@ struct QuizPlayView: View {
                 withAnimation(.spring(response: 1, dampingFraction: 0.3, blendDuration: 1)) {
                     angle += 360
                 }
-                //Dispatch...
-                //DispatchQueue.main.async
             }, label: {
                 Image(quizItem.favourite ? "star_yellow" : "star_grey")
                     .resizable()

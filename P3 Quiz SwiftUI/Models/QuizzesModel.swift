@@ -3,6 +3,7 @@
 //  P1 Quiz SwiftUI
 //
 //  Created by Santiago Pavón Gómez on 17/09/2021.
+//  Edited by Ramón Hernández García and Andrés Ripoll Cabrera on 07/11/21.
 //
 
 import Foundation
@@ -13,38 +14,36 @@ class QuizzesModel: ObservableObject {
     // Los datos
     @Published private(set) var quizzes = [QuizItem]()
     
-//    let TOKEN = "e176550118dd9de9e5f0"//"d283b3d85b2d2778acba"
-//    let URL_BASE = "https://core.dit.upm.es/api"
     // Session
     private let session = URLSession.shared
-
+    
     // URL del servidor Quiz.
     @Published var url_base: String
-
+    
     // Token de acceso
     @Published var token: String
-
+    
     @Published var errorAlert: String?
     
     var subscribers: Set<AnyCancellable> = []
-
+    
     init() {
         url_base = UserDefaults.standard.string(forKey: "url_base") ?? ""
         token = UserDefaults.standard.string(forKey: "token") ?? ""
-
+        
         download()
-       
+        
         $url_base.sink { url_base in
-                    UserDefaults.standard.set(url_base, forKey: "url_base")
-                    UserDefaults.standard.synchronize()
+            UserDefaults.standard.set(url_base, forKey: "url_base")
+            UserDefaults.standard.synchronize()
         }.store(in: &subscribers)
-
+        
         $url_base.sink { token in
-                    UserDefaults.standard.set(token, forKey: "token")
-                    UserDefaults.standard.synchronize()
+            UserDefaults.standard.set(token, forKey: "token")
+            UserDefaults.standard.synchronize()
         }.store(in: &subscribers)
     }
-
+    
     func resetEndPoint() {
         url_base = "https://core.dit.upm.es/api"
         token = "e176550118dd9de9e5f0"
@@ -60,14 +59,10 @@ class QuizzesModel: ObservableObject {
             let data = try Data(contentsOf: jsonURL)
             let decoder = JSONDecoder()
             
-//            if let str = String(data: data, encoding: String.Encoding.utf8) {
-//                print("Quizzes ==>", str)
-//            }
-            
             let quizzes = try decoder.decode([QuizItem].self, from: data)
             
             self.quizzes = quizzes
-
+            
             print("Quizzes cargados")
         } catch {
             self.errorAlert(errorMsg: "Algo chungo ha pasado: \(error)")
@@ -103,9 +98,9 @@ class QuizzesModel: ObservableObject {
                 self.load()
             }
         }
-            .resume()
+        .resume()
     }
-
+    
     func toggleFavourite(quizItem: QuizItem) {
         guard let index = quizzes.firstIndex(where: { qi in
             qi.id == quizItem.id
@@ -131,7 +126,7 @@ class QuizzesModel: ObservableObject {
                 DispatchQueue.main.sync {
                     self.quizzes[index].favourite.toggle()
                 }
-               } else {
+            } else {
                 self.errorAlert(errorMsg: "Error: no se ha podido marcar o desmarcar este quiz como favorito")
             }
         }

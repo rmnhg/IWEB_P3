@@ -2,7 +2,7 @@
 //  SetupView.swift
 //  P3 Quiz SwiftUI
 //
-//  Created by Ramón Hernández García on 07/11/2021.
+//  Created by Ramón Hernández García and Andrés Ripoll Cabrera on 07/11/2021.
 //
 
 import SwiftUI

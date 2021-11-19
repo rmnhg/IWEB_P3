@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  Practica2
+//  Practica3
 //
 //  Created by Ramón Hernández García and Andrés Ripoll Cabrera on 25/10/21.
 //
@@ -41,9 +41,9 @@ struct QuizzesListView: View {
             showAlert = error != nil
         })
         .alert(isPresented: $showAlert) {
-                   Alert(title: Text("Alerta"),
-                                 message: Text(quizzesModel.errorAlert!),
-                                 dismissButton: .default(Text("Ok")))
+            Alert(title: Text("Alerta"),
+                  message: Text(quizzesModel.errorAlert!),
+                  dismissButton: .default(Text("Ok")))
         }
         //Para adaptar la vista en el formato horizontal
         .phoneOnlyStackNavigationView()
