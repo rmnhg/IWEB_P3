@@ -3,5 +3,4 @@ Andrés Ripoll Cabrera
 Ramón Hernández García
 //Identificador del equipo:
 a013
-//Mejoras:
-Están implementadas todas las mejoras que se piden para esta práctica. En la mejora de la animación, la animación que se emplea es la de rotar la imagen. Además, hemos añadido iconos a la aplicación y un Screen Launcher con una foto del icono de la app y el background en morado.
+//Mejoras:Están implementadas todas funcionalidades que se piden para la práctica. Además, también incluimos la mejora de actualizar favoritos, que contiene una animación. Por otro lado, se ha incluido un menú de aplicación para acceder a la vista play o bien a los ajustes. 
